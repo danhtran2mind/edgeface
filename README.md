@@ -52,7 +52,7 @@ transform = transforms.Compose([
             transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
             ])
 
-paths = 'test/test_images/Elon_Musk.jpg'
+paths = 'tests/test_images/Elon_Musk.jpg'
 batch_size = len(paths) if isinstance(paths, (list, tuple)) else 1
 
 # Align faces (assuming align.get_aligned_face returns a list of tuples)
