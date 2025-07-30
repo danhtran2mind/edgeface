@@ -83,7 +83,7 @@ def process_individual(model, image_paths, all_bounding_boxes, all_cropped_faces
             all_bounding_boxes.append(bboxes)
             all_cropped_faces.append(faces[0] if faces else [])
 
-def face_yolo_detection(image_paths, yolo_model_path="./ckpts/yolo11_face_detection/model.pt", use_batch=True, device='cuda'):
+def face_yolo_detection(image_paths, yolo_model_path="./ckpts/yolo_face_detection/model.pt", use_batch=True, device='cuda'):
     """Perform face detection using YOLOv11 with batch or individual processing on specified device."""
     model = initialize_yolo_model(yolo_model_path)
     all_bounding_boxes, all_cropped_faces = [], []
@@ -99,7 +99,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="YOLOv11 face detection")
     parser.add_argument("--use-batch", action="store_true", default=True, help="Use batch processing (default: True)")
     parser.add_argument("--image-dir", type=str, default="test/test_images", help="Input image directory")
-    parser.add_argument("--yolo-model-path", type=str, default="ckpts/yolo11_face_detection/model.pt", help="YOLO model path")
+    parser.add_argument("--yolo-model-path", type=str, default="ckpts/yolo_face_detection/model.pt", help="YOLO model path")
     parser.add_argument("--device", type=str, default="cuda", help="Device to run the model (e.g., 'cuda', 'cpu', 'cuda:0')")
     
     args = parser.parse_args()
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     if args.yolo_model_path:
         yolo_model_path = args.yolo_model_path
     else:
-        yolo_model_path = os.path.join("ckpts", "yolo11_face_detection", "model.pt")
+        yolo_model_path = os.path.join("ckpts", "yolo_face_detection", "model.pt")
 
     import time
     t1 = time.time()
