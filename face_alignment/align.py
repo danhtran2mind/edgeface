@@ -45,12 +45,12 @@ def get_aligned_face(image_path_or_image_paths, rgb_pil_image=None, algorithm='m
         if isinstance(image_path_or_image_paths, list):
             image_paths = image_path_or_image_paths
             results = face_yolo_detection(image_paths,
-                        # yolo_model_path="ckpts/yolo11_face_detection/model.pt",
+                        # yolo_model_path="ckpts/yolo_face_detection/model.pt",
                         use_batch=True, device=DEVICE)
         elif isinstance(image_path_or_image_paths, str):
             image_paths = [image_path_or_image_paths]
             results = face_yolo_detection(image_paths,
-                        # yolo_model_path="ckpts/yolo11_face_detection/model.pt",
+                        # yolo_model_path="ckpts/yolo_face_detection/model.pt",
                         use_batch=True, device=DEVICE)
         else:
             raise TypeError("image_path_or_image_paths must be a list or string") 
