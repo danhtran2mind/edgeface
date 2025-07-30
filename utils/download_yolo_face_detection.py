@@ -10,7 +10,7 @@ def download_yolo_face_detection_model():
     print("Downloading YOLOv11 face detection model...")
     # Define the checkpoint directory
     checkpoint_dir = "./ckpts"
-    yolo_dir = os.path.join(checkpoint_dir, "yolo11_face_detection")
+    yolo_dir = os.path.join(checkpoint_dir, "yolo_face_detection")
     # Create the checkpoint directory if it doesn't exist
     os.makedirs(yolo_dir, exist_ok=True)
 
